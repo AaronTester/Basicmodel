@@ -1,0 +1,25 @@
+server:
+  port: 8083
+  servlet:
+    context-path: /BasicmodelConsumer
+spring:
+#  profiles:
+#    active: dev
+  thymeleaf:
+    cache: false
+  mvc:
+    static-path-pattern: /static/**
+  freemarker:
+    checkTemplateLocation: false
+logging:
+  config: classpath:logback.xml
+  level:
+    cn.jay.repository: trace
+dubbo:
+  application:
+    name: basicmodel-serviceconsumer
+  registry:
+    address: zookeeper://127.0.0.1:2181
+    protocol: zookeeper
+  protocol:
+    port: 30102
